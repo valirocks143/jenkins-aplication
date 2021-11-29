@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/awssdk/aws-core/2.17.77/aws-core-2.17.77.jar"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/awssdk/annotations/2.17.77/annotations-2.17.77.jar"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/awssdk/regions/2.17.77/regions-2.17.77.jar"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/awssdk/utils/2.17.77/utils-2.17.77.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/awssdk/sdk-core/2.17.77/sdk-core-2.17.77.jar"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/awssdk/http-client-spi/2.17.77/http-client-spi-2.17.77.jar"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/awssdk/metrics-spi/2.17.77/metrics-spi-2.17.77.jar"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/awssdk/profiles/2.17.77/profiles-2.17.77.jar"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/awssdk/json-utils/2.17.77/json-utils-2.17.77.jar"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/awssdk/third-party-jackson-core/2.17.77/third-party-jackson-core-2.17.77.jar"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/awssdk/auth/2.17.77/auth-2.17.77.jar"/>
+  <classpathentry kind="var" path="M2_REPO/software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.jar"/>
+</classpath>

@@ -1,0 +1,56 @@
+pipeline {
+    agent any
+   tools {
+       maven "maven 3.8.4"
+   }
+   stages {
+        stage('scm') {
+            steps {
+                // Get some code from a GitHub repository
+               git branch: 'master', credentialsId: 'git-credentials', url: 'https://github.com/valirocks143/jenkins-aplication.git'
+               
+            }
+        }
+       stage('Clean') {
+             steps {
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean"
+                }
+        }
+  
+        stage('Package') {
+             steps {
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true package"
+				
+                }
+        }
+   
+        stage('Artifact') {
+            steps {
+                // maven artifacts
+               archiveArtifacts 'target/*.war'
+              // archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
+            }
+        }
+   
+       stage('tom cat connection') {
+             steps {
+          withCredentials([sshUserPrivateKey(credentialsId: 'linex_credential', keyFileVariable: 'key_veriable', passphraseVariable: 'linux_key_veriable', usernameVariable: 'tomcat_veriable')]) {
+            echo "secussfully connected server"
+                
+            }
+				
+                }
+        }
+         stage('tomcatdeploy') {
+             steps {
+               withCredentials([usernameColonPassword(credentialsId: 'tomcatcredential', variable: 'tom_cat_credwntials')]) {
+               sh "curl -v -u ${tom_cat_credwntials} -T /var/lib/jenkins/workspace/mvnproject/target/mavenwebproject.war 'http://ec2-18-188-61-149.us-east-2.compute.amazonaws.com:8080/manager/text/deploy?path=/mavenwebproject&update=true'"     
+                   
+               }
+                }
+        }
+   }        
+        
+}
